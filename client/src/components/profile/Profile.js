@@ -7,6 +7,7 @@ import ProfileTop from "./ProfileTop";
 import ProfileAbout from "./ProfileAbout";
 import ProfileExperience from "./ProfileExperience";
 import ProfileEducation from "./ProfileEducation";
+import ProfileGithub from "./ProfileGithub";
 import { getProfileById } from "../../actions/profile";
 
 const Profile = ({
@@ -42,11 +43,8 @@ const Profile = ({
 							<h2 className="text-primary">Experience</h2>
 							{profile.experience.length > 0 ? (
 								<Fragment>
-									{profile.experience.map((experience) => (
-										<ProfileExperience
-											key={experience._id}
-											experience={experience}
-										/>
+									{profile.experience.map((exp) => (
+										<ProfileExperience key={exp._id} experience={exp} />
 									))}
 								</Fragment>
 							) : (
@@ -68,6 +66,9 @@ const Profile = ({
 								<h4>No education at present</h4>
 							)}
 						</div>
+						{profile.githubusername && (
+							<ProfileGithub username={profile.githubusername} />
+						)}
 					</div>
 				</Fragment>
 			)}
