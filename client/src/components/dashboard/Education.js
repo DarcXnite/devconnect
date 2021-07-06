@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
+import formatDate from "../../utils/formatDate";
 import { connect } from "react-redux";
 import { deleteEducation } from "../../actions/profile";
 
